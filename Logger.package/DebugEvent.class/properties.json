@@ -1,0 +1,14 @@
+{
+	"category" : "Logger",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "DebugEvent",
+	"pools" : [
+		 ],
+	"super" : "TraceEvent",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "Logger",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Current" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"enabled" ],
+	"name" : "Logger",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

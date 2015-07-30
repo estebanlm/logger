@@ -1,0 +1,14 @@
+{
+	"category" : "Logger",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "ErrorEvent",
+	"pools" : [
+		 ],
+	"super" : "TraceEvent",
+	"type" : "normal" }
