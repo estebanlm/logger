@@ -1,3 +1,3 @@
 accessing
 log 
-	^ RpgLogger log
+	^ Logger log
