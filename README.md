@@ -10,8 +10,7 @@ Maybe I need to die and use a real logger, he :)
 
 ## Install
 
-```language=Smalltalk
-
+```Smalltalk
 Metacello new
 	repository: 'github://estebanlm/logger/mc';
 	baseline: 'Logger';
@@ -20,7 +19,7 @@ Metacello new
 
 ## Usage
 
-```language=Smalltalk
+```Smalltalk
 'this is a log' emitLogInfo.
 anError emitLogDebug.
 42 emitLogError.
