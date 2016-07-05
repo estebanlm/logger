@@ -1,0 +1,3 @@
+logging
+logToTranscript
+	^ ZnLogEvent logToTranscript

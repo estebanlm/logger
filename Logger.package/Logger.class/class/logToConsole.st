@@ -1,0 +1,3 @@
+logging
+logToConsole
+	^ ZnLogEvent logToConsole
