@@ -20,6 +20,10 @@ Metacello new
 ## Usage
 
 ```Smalltalk
+Logger logToConsole.
+Logger logToTranscript.
+Logger stopLogging.
+
 'this is a log' emitLogInfo.
 anError emitLogDebug.
 42 emitLogError.
