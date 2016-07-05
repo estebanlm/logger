@@ -12,7 +12,7 @@ Maybe I need to die and use a real logger, he :)
 
 ```Smalltalk
 Metacello new
-	repository: 'github://estebanlm/logger/mc';
+	repository: 'github://estebanlm/logger';
 	baseline: 'Logger';
 	load.
 ```
