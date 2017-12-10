@@ -1,3 +1,0 @@
-logging
-stopLogging
-	SignalLogger stopAll
