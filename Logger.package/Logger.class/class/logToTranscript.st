@@ -1,3 +1,0 @@
-logging
-logToTranscript
-	TranscriptLogger instance start
