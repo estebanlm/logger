@@ -1,3 +1,3 @@
 logging
 logToConsole
-	^ ZnLogEvent logToConsole
+	FileLogger stdout start

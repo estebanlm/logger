@@ -1,14 +1,11 @@
 {
-	"category" : "BaselineOfLogger",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "BaselineOfLogger",
-	"pools" : [
-		 ],
 	"super" : "BaselineOf",
-	"type" : "normal" }
+	"category" : "BaselineOfLogger",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfLogger",
+	"type" : "normal"
+}

@@ -1,3 +1,3 @@
 logging
 logToTranscript
-	^ ZnLogEvent logToTranscript
+	TranscriptLogger instance start

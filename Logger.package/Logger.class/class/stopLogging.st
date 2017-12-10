@@ -1,3 +1,3 @@
 logging
 stopLogging
-	^ ZnLogEvent stopLoggingToTranscript
+	SignalLogger stopAll

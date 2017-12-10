@@ -1,14 +1,11 @@
 {
-	"category" : "Logger",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		"message" ],
+	"super" : "StringSignal",
+	"category" : "Logger",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
 	"name" : "TraceEvent",
-	"pools" : [
-		 ],
-	"super" : "ZnLogEvent",
-	"type" : "normal" }
+	"type" : "normal"
+}

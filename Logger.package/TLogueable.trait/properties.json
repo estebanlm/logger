@@ -1,4 +1,5 @@
 {
-	"category" : "Logger",
+	"name" : "TLogueable",
 	"commentStamp" : "EstebanLorenzano 2/20/2014 10:24",
-	"name" : "TLogueable" }
+	"category" : "Logger"
+}
