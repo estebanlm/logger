@@ -41,7 +41,8 @@ Logger class >> logToTranscript [
 
 { #category : #logging }
 Logger class >> stopLogging [
-	SignalLogger stopAll
+	SignalLogger stopAll.
+	Beacon resetInstance
 ]
 
 { #category : #'accessing events' }
