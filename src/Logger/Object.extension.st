@@ -2,12 +2,12 @@ Extension { #name : #Object }
 
 { #category : #'*Logger' }
 Object >> emitLogDebug [
-	^ self asString emitLogDebug
+	^ self loggerString emitLogDebug
 ]
 
 { #category : #'*Logger' }
 Object >> emitLogError [
-	^ self asString emitLogError
+	^ self loggerString emitLogError
 ]
 
 { #category : #'*Logger' }
