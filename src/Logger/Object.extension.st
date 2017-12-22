@@ -12,5 +12,10 @@ Object >> emitLogError [
 
 { #category : #'*Logger' }
 Object >> emitLogInfo [
-	^ self asString emitLogInfo
+	^ self loggerString emitLogInfo
+]
+
+{ #category : #'*Logger' }
+Object >> loggerString [
+	^ self printString
 ]
