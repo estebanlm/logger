@@ -1,7 +1,7 @@
 Class {
 	#name : #BaselineOfLogger,
 	#superclass : #BaselineOf,
-	#category : 'BaselineOfLogger'
+	#category : #BaselineOfLogger
 }
 
 { #category : #accessing }
@@ -9,7 +9,6 @@ BaselineOfLogger >> baseline: spec [
 	<baseline>
 	
 	spec for: #pharo do: [
-		self beacon: spec.
 		spec package: 'Logger' ].	
 ]
 
