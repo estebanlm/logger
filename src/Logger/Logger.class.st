@@ -36,11 +36,15 @@ Logger class >> logToFile: aName [
 
 { #category : #logging }
 Logger class >> logToTranscript [
+	<script>
+
 	TranscriptLogger instance start
 ]
 
 { #category : #logging }
 Logger class >> stopLogging [
+	<script>
+
 	SignalLogger stopAll.
 	Beacon resetInstance
 ]
