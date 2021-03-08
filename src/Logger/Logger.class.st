@@ -45,8 +45,7 @@ Logger class >> logToTranscript [
 Logger class >> stopLogging [
 	<script>
 
-	SignalLogger stopAll.
-	Beacon resetInstance
+	SignalLogger stopAll
 ]
 
 { #category : #'accessing events' }
