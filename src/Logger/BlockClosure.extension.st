@@ -1,16 +1,16 @@
-Extension { #name : #BlockClosure }
+Extension { #name : 'BlockClosure' }
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 BlockClosure >> emitLogDebug [
 	^ Logger current debug: self
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 BlockClosure >> emitLogError [
 	^ Logger current error: self
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 BlockClosure >> emitLogInfo [
 	^ Logger current info: self
 ]

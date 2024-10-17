@@ -1,18 +1,18 @@
-Extension { #name : #Error }
+Extension { #name : 'Error' }
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 Error >> emitLogDebug [
 	^ Logger current error: (String streamContents: [ :stream |
 		stream << self messageText; cr.
 		self signalerContext shortDebugStackOn: stream ])
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 Error >> emitLogError [
 	^ Logger current error: self messageText
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 Error >> emitLogInfo [
 	^ Logger current error: self messageText
 ]

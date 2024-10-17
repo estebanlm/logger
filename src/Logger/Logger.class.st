@@ -3,52 +3,53 @@ I'm a facade to manage log on my applications.
 I use beacon as backend.
 "
 Class {
-	#name : #Logger,
-	#superclass : #Object,
+	#name : 'Logger',
+	#superclass : 'Object',
 	#instVars : [
 		'enabled'
 	],
 	#classVars : [
 		'Current'
 	],
-	#category : 'Logger'
+	#category : 'Logger',
+	#package : 'Logger'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Logger class >> current [ 
 	^ Current ifNil: [ Current := self new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Logger class >> log [ 
 	^ self current
 ]
 
-{ #category : #logging }
+{ #category : 'logging' }
 Logger class >> logToConsole [
 	FileLogger stdout start
 ]
 
-{ #category : #logging }
+{ #category : 'logging' }
 Logger class >> logToFile: aName [
 	(FileLogger filename: aName) start
 ]
 
-{ #category : #logging }
+{ #category : 'logging' }
 Logger class >> logToTranscript [
 	<script>
 
 	TranscriptLogger instance start
 ]
 
-{ #category : #logging }
+{ #category : 'logging' }
 Logger class >> stopLogging [
 	<script>
 
 	SignalLogger stopAll
 ]
 
-{ #category : #'accessing events' }
+{ #category : 'accessing events' }
 Logger >> debug: aBlockOrString [ 
 	self isEnabled ifFalse: [ ^ self ].
 	DebugEvent new 
@@ -57,19 +58,19 @@ Logger >> debug: aBlockOrString [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Logger >> disable [ 
 	enabled := false.
 	TraceEvent stopLoggingToTranscript
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Logger >> enable [ 
 	enabled := true.
 	TraceEvent logToTranscript
 ]
 
-{ #category : #'accessing events' }
+{ #category : 'accessing events' }
 Logger >> error: aBlockOrString [
 	self isEnabled ifFalse: [ ^ self ].
 	ErrorEvent new 
@@ -78,7 +79,7 @@ Logger >> error: aBlockOrString [
 	
 ]
 
-{ #category : #'accessing events' }
+{ #category : 'accessing events' }
 Logger >> info: aBlockOrString [
 	self isEnabled ifFalse: [ ^ self ].
 	InfoEvent new 
@@ -87,13 +88,13 @@ Logger >> info: aBlockOrString [
 	
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 Logger >> initialize [ 
 	super initialize.
 	enabled := true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 Logger >> isEnabled [
 	^ enabled
 ]

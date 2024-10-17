@@ -1,21 +1,21 @@
-Extension { #name : #Object }
+Extension { #name : 'Object' }
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 Object >> emitLogDebug [
 	^ self loggerString emitLogDebug
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 Object >> emitLogError [
 	^ self loggerString emitLogError
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 Object >> emitLogInfo [
 	^ self loggerString emitLogInfo
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 Object >> loggerString [
 	^ self printString
 ]

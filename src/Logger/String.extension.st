@@ -1,16 +1,16 @@
-Extension { #name : #String }
+Extension { #name : 'String' }
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 String >> emitLogDebug [
 	^ Logger current debug: self
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 String >> emitLogError [
 	^ Logger current error: self
 ]
 
-{ #category : #'*Logger' }
+{ #category : '*Logger' }
 String >> emitLogInfo [
 	^ Logger current info: self
 ]

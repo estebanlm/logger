@@ -8,7 +8,8 @@ In a production environment I'm usually disabled.
 
 "
 Class {
-	#name : #TraceEvent,
-	#superclass : #StringSignal,
-	#category : 'Logger'
+	#name : 'TraceEvent',
+	#superclass : 'StringSignal',
+	#category : 'Logger',
+	#package : 'Logger'
 }
