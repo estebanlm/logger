@@ -65,6 +65,12 @@ SystemLogger >> enable [
 	
 ]
 
+{ #category : 'testing' }
+SystemLogger >> isEnabled [
+
+	^ self subclassResponsibility
+]
+
 { #category : 'tracing' }
 SystemLogger >> object: aVariable [
 	"trace variable value"
@@ -72,6 +78,11 @@ SystemLogger >> object: aVariable [
 
 { #category : 'tracing' }
 SystemLogger >> trace [
+	"trace method (and line)"
+]
+
+{ #category : 'tracing' }
+SystemLogger >> trace: aString [
 	"trace method (and line)"
 ]
 

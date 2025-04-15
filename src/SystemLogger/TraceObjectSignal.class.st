@@ -20,9 +20,12 @@ TraceObjectSignal class >> fromContext: aContext object: anObject [
 
 { #category : 'initialization' }
 TraceObjectSignal >> fromContext: aContext [ 
+	| argument |
 
 	super fromContext: aContext.
-	variableName := aContext sourceNodeExecuted arguments first name
+	argument := aContext sourceNodeExecuted arguments first.
+	argument isLiteralNode 
+		ifFalse: [ variableName := argument name ]
 ]
 
 { #category : 'accessing' }
@@ -42,7 +45,8 @@ TraceObjectSignal >> printOneLineContentsOn: stream [
 
 	super printOneLineContentsOn: stream.
 	stream space.
-	stream << self variableName << '='.
+	self variableName ifNotNil: [ :aName | 
+		stream << aName << '=' ].
 	stream print: self object
 ]
 

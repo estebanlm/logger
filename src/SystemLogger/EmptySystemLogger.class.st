@@ -4,3 +4,9 @@ Class {
 	#category : 'SystemLogger',
 	#package : 'SystemLogger'
 }
+
+{ #category : 'testing' }
+EmptySystemLogger >> isEnabled [
+
+	^ false
+]

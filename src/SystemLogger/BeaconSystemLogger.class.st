@@ -5,6 +5,12 @@ Class {
 	#package : 'SystemLogger'
 }
 
+{ #category : 'testing' }
+BeaconSystemLogger >> isEnabled [
+
+	^ true
+]
+
 { #category : 'tracing' }
 BeaconSystemLogger >> object: aVariable [
 
@@ -19,6 +25,15 @@ BeaconSystemLogger >> trace [
 	"trace method (and line)"
 
 	(TraceSignal fromContext: thisContext sender) emit
+]
+
+{ #category : 'tracing' }
+BeaconSystemLogger >> trace: anObject [
+
+	(TraceObjectSignal 
+		fromContext: thisContext sender
+		object: anObject) 
+		emit
 ]
 
 { #category : 'tracing' }
