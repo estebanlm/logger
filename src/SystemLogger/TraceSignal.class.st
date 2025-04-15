@@ -44,8 +44,9 @@ TraceSignal >> fromContext: aContext [
 TraceSignal >> printOneLineContentsOn: stream [
 
 	stream 
-		<< self senderClass name  << '>>#' << self senderSelector << ':'; 
-		print: self sourcePosition first
+		<< self senderClass name  << '>>#' << self senderSelector 
+		<< '@';
+			print: self sourcePosition first
 ]
 
 { #category : 'accessing' }
