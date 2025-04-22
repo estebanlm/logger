@@ -65,6 +65,10 @@ SystemLogger >> enable [
 	
 ]
 
+{ #category : 'tracing' }
+SystemLogger >> info: aString [
+]
+
 { #category : 'testing' }
 SystemLogger >> isEnabled [
 

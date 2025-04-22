@@ -30,7 +30,7 @@ BeaconSystemLogger >> trace [
 { #category : 'tracing' }
 BeaconSystemLogger >> trace: anObject [
 
-	(TraceObjectSignal 
+	(TraceObjectSignal
 		fromContext: thisContext sender
 		object: anObject) 
 		emit

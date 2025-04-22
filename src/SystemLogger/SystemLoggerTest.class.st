@@ -6,9 +6,15 @@ Class {
 }
 
 { #category : 'accessing' }
+SystemLoggerTest >> messageForTest [
+
+	^ 'a message'
+]
+
+{ #category : 'accessing' }
 SystemLoggerTest >> recordings [
 
-	^ MemoryLogger instance recordings
+	^ MemoryLogger instance entries
 ]
 
 { #category : 'running' }
@@ -26,17 +32,13 @@ SystemLoggerTest >> tearDown [
 ]
 
 { #category : 'tests' }
-SystemLoggerTest >> testObject [
-	| var |
+SystemLoggerTest >> testInfo [
 
-	var := 42.
-	BeaconSystemLogger uniqueInstance object: var.
+	BeaconSystemLogger uniqueInstance info: self message.
 	
 	self assert: self recordings first senderClass equals: self class.	
-	self assert: self recordings first senderSelector equals: #testObject.
-	self assert: self recordings first sourcePosition equals: { 5. 2. 35 }.
-	self assert: self recordings first variableName equals: #var.
-	self assert: self recordings first object equals: 42
+	self assert: self recordings first senderSelector equals: #testVariable.
+	self assert: self recordings first message equals: self message
 ]
 
 { #category : 'tests' }
@@ -50,15 +52,27 @@ SystemLoggerTest >> testTrace [
 ]
 
 { #category : 'tests' }
-SystemLoggerTest >> testVariable [
+SystemLoggerTest >> testTraceWithMessage [
+
+	BeaconSystemLogger uniqueInstance trace: self messageForTest.
+	
+	self assert: self recordings first senderClass equals: self class.	
+	self assert: self recordings first senderSelector equals: #testTraceWithMessage.
+	self assert: self recordings first sourcePosition equals: { 5. 2. 37 }.
+	self assert: self recordings first variableName equals: #var.
+	self assert: self recordings first object equals: 42
+]
+
+{ #category : 'tests' }
+SystemLoggerTest >> testTraceWithVariable [
 	| var |
 
 	var := 42.
-	BeaconSystemLogger uniqueInstance variable: var.
+	BeaconSystemLogger uniqueInstance trace: var.
 	
 	self assert: self recordings first senderClass equals: self class.	
-	self assert: self recordings first senderSelector equals: #testVariable.
-	self assert: self recordings first sourcePosition equals: { 5. 2. 37 }.
+	self assert: self recordings first senderSelector equals: #testTraceWithVariable.
+	self assert: self recordings first sourcePosition equals: { 5. 2. 46 }.
 	self assert: self recordings first variableName equals: #var.
 	self assert: self recordings first object equals: 42
 ]
