@@ -3,7 +3,8 @@ Class {
 	#superclass : 'TraceSignal',
 	#instVars : [
 		'object',
-		'traceName'
+		'traceName',
+		'traceMessage'
 	],
 	#category : 'SystemLogger',
 	#package : 'SystemLogger'
@@ -55,10 +56,26 @@ TraceObjectSignal >> object: anObject [
 TraceObjectSignal >> printOneLineContentsOn: stream [ 
 
 	super printOneLineContentsOn: stream.
+	
+	traceMessage ifNotNil: [
+		stream space. 
+		stream << traceMessage ].
 	stream space.
 	self traceName ifNotNil: [ :aName | 
 		stream << aName << '=' ].
 	stream print: self object
+]
+
+{ #category : 'accessing' }
+TraceObjectSignal >> traceMessage [
+
+	^ traceMessage
+]
+
+{ #category : 'accessing' }
+TraceObjectSignal >> traceMessage: anObject [
+
+	traceMessage := anObject
 ]
 
 { #category : 'accessing' }

@@ -91,6 +91,11 @@ SystemLogger >> trace: aString [
 ]
 
 { #category : 'tracing' }
+SystemLogger >> trace: aString message: messageString [
+	"trace method (and line)"
+]
+
+{ #category : 'tracing' }
 SystemLogger >> var: aVariable [
 	"trace variable value"
 ]

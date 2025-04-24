@@ -54,13 +54,26 @@ SystemLoggerTest >> testTrace [
 { #category : 'tests' }
 SystemLoggerTest >> testTraceWithMessage [
 
-	BeaconSystemLogger uniqueInstance trace: self messageForTest.
+	BeaconSystemLogger uniqueInstance trace: self messageForTest message: 'TEST'.
 	
 	self assert: self recordings first senderClass equals: self class.	
 	self assert: self recordings first senderSelector equals: #testTraceWithMessage.
-	self assert: self recordings first sourcePosition equals: { 5. 2. 37 }.
-	self assert: self recordings first variableName equals: #var.
-	self assert: self recordings first object equals: 42
+	self assert: self recordings first sourcePosition equals: { 3. 2. 24 }.
+	self assert: self recordings first traceName equals: 'self messageForTest'.
+	self assert: self recordings first traceMessage equals: 'TEST'.
+	self assert: self recordings first object equals: 'a message'
+]
+
+{ #category : 'tests' }
+SystemLoggerTest >> testTraceWithSelector [
+
+	BeaconSystemLogger uniqueInstance trace: self messageForTest.
+	
+	self assert: self recordings first senderClass equals: self class.	
+	self assert: self recordings first senderSelector equals: #testTraceWithSelector.
+	self assert: self recordings first sourcePosition equals: { 3. 2. 25 }.
+	self assert: self recordings first traceName equals: 'self messageForTest'.
+	self assert: self recordings first object equals: 'a message'
 ]
 
 { #category : 'tests' }
@@ -73,6 +86,6 @@ SystemLoggerTest >> testTraceWithVariable [
 	self assert: self recordings first senderClass equals: self class.	
 	self assert: self recordings first senderSelector equals: #testTraceWithVariable.
 	self assert: self recordings first sourcePosition equals: { 5. 2. 46 }.
-	self assert: self recordings first variableName equals: #var.
+	self assert: self recordings first traceName equals: #var.
 	self assert: self recordings first object equals: 42
 ]

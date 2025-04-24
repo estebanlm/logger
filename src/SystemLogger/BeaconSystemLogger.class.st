@@ -37,6 +37,16 @@ BeaconSystemLogger >> trace: anObject [
 ]
 
 { #category : 'tracing' }
+BeaconSystemLogger >> trace: anObject message: messageString [
+
+	(TraceObjectSignal
+		fromContext: thisContext sender
+		object: anObject) 
+		traceMessage: messageString;
+		emit
+]
+
+{ #category : 'tracing' }
 BeaconSystemLogger >> var: aVariable [
 
 	(TraceObjectSignal 
