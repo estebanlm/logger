@@ -5,6 +5,26 @@ Class {
 	#package : 'SystemLogger'
 }
 
+{ #category : 'tracing' }
+BeaconSystemLogger >> error: aString [
+
+	(TraceObjectSignal
+		fromContext: thisContext sender
+		object: aString)
+		traceMessage: 'ERROR';
+		emit
+]
+
+{ #category : 'tracing' }
+BeaconSystemLogger >> info: aString [
+
+	(TraceObjectSignal
+		fromContext: thisContext sender
+		object: aString)
+		traceMessage: 'INFO';
+		emit
+]
+
 { #category : 'testing' }
 BeaconSystemLogger >> isEnabled [
 
@@ -44,6 +64,13 @@ BeaconSystemLogger >> trace: anObject message: messageString [
 		object: anObject) 
 		traceMessage: messageString;
 		emit
+]
+
+{ #category : 'tracing' }
+BeaconSystemLogger >> traceStack [
+	"trace stack"
+
+	(TraceStackSignal fromContext: thisContext sender) emit
 ]
 
 { #category : 'tracing' }

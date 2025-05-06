@@ -66,7 +66,13 @@ SystemLogger >> enable [
 ]
 
 { #category : 'tracing' }
+SystemLogger >> error: aString [
+
+]
+
+{ #category : 'tracing' }
 SystemLogger >> info: aString [
+
 ]
 
 { #category : 'testing' }
@@ -93,6 +99,11 @@ SystemLogger >> trace: aString [
 { #category : 'tracing' }
 SystemLogger >> trace: aString message: messageString [
 	"trace method (and line)"
+]
+
+{ #category : 'as yet unclassified' }
+SystemLogger >> traceStack [
+
 ]
 
 { #category : 'tracing' }
